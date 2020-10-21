@@ -12,8 +12,8 @@ function writePassword() {
 
   var passwordLength = prompt("How long would you like your password to be? (Minimum 8 characters)");
   
-  while((passwordLength < 8 || passwordLength > 128) && typeof passwordLength !== "number") { 
-    alert("Password must be between 8 and 128 characters!");
+  while((passwordLength < 8 || passwordLength > 128) || !Number.isInteger(parseInt(passwordLength))) {
+    alert("Password must be between 8 and 128 numerical characters!");
     passwordLength = prompt("How long would you like your password to be? (Minimum 8 characters)");
   } 
 
